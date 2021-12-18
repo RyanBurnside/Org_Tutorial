@@ -52,16 +52,61 @@
 
 
 
-* Org Spreadsheet/Table
-** Creeation
-   
-** Making URLS with parameters
+* Org Spreadsheet/Table** Creeation
+** Creation  
+   For a simple starter table, just enter |- and press tab over it.
+   This will give you a 5 column 1 header, 1 row table.
+   Use TAB to move from cell to tell or SHIFT TAB to move backward
+   Pressing ENTER on a cell inserts a new row
+   Pressing M-Shift and UP deletes the current row
+   Pressing M-Shift and LEFT deletes the current column
+   There are more commands, notice that you have a "Tbl" button on your file menu while in org mode.
+   If you don't have the menu enabled, just press F10.
    
 ** Elisp and Calc calculations
+   You can do calculations in one of two languages. There is a Calc mode (a bit like Excel) or an Emacs Lisp mode.
+   You can reference individual cells, individual columns, ranges, and relative cells and columns. (You have homework, research this)
+   The columns start at 1 ($1)
+   Place a :: mark between formulas *NOTE* They ALL need to be on 1 line. I'm sorry it's gross. You can have more than one but you'll have to eval them each manually.
+
+Below, I tell the spreadsheet column 1 is simply 13.
+I then tell the spreadsheet that column 2 is random, I use Elisp here which MUST be quoted for the spreadsheet.
+Column 3 uses the special Calc syntax. (I don't believe you can mix Elisp and Calc syntax in the same calculation)
+
+(Press C-c C-c on the formula line at the bottom to evaluate the formula and polulate the columns)
+| Value A | Value B | Sum |
+|---------+---------+-----|
+|         |         |     |
+|         |         |     |
+|         |         |     |
+|         |         |     |
+|         |         |     |
+|         |         |     |
+|         |         |     |
+#+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
+
+** Making URLS with parameters
+
 
 ** Sorting
+Hmm let's take the table from our previous section.
+Evalulate it with C-c C-c on the formula line.
+Then let's sort. We are going to sort on sum.
+Move your cursor to the body of the sum colum (anywhere) and press C-c ^ (sometimes it is fussy, if that happens just do M-x org-sort)
+
+| Value A | Value B | Sum |
+|---------+---------+-----|
+|      13 |      56 |  69 |
+|      13 |      78 |  91 |
+|      13 |      47 |  60 |
+|      13 |       8 |  21 |
+|      13 |      48 |  61 |
+|      13 |      26 |  39 |
+|      13 |      14 |  27 |
+#+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
    
 ** Cell properties...
+
 
 
 * Images
@@ -70,8 +115,22 @@ https://orgmode.org/manual/Images.html
 
 
 * Encryptions usg pgp
+  Use M-x epa-encrypt-region and epa-decrypt-region to deal with encrypting text. (Try decrypting the block below with 'password' as your password)
+  *NOTE* You will need the commandline version of pgp installed on your system.
 
-*Spell Checking
+-----BEGIN PGP MESSAGE-----
 
+jA0ECQMCQrvpDnGoxAf/0sBZASWgBMc98zMaq2/HOST5gl9yNhQhacMdV6v+8MWw
+gAhAEJ+4fBshrk3g4JHHGHXXPVOa4/LrZZizHNWZM0uy0+W2rMQp1UvHJy7ES5B0
+92fEUBrGQPQ9ZoGjYuK5xL18Dyv52nFTRYEyz/jfdX8q3E1DmbZDiNM6w02oWqQW
+1FK9ErTHXRHvW5QcwE6ojc07aEJ8Tcya3Fo9g5U4PJElTU2F6AiaLhbu5Jxn0yaS
+OeHFltUeFtFD6AXcRKxeibUYWlNDUjfMB8oOR2jpsGs06NPC17fQ4y0BQpkLjACu
+Gc5WoLzj7C6bqnmOEOm+7p/cOiCMBoqOMesTlzyshHjViOrDPaBPKR6ye5fQPiN0
+/4xJHL3N6Md+qc8=
+=1/c0
+-----END PGP MESSAGE-----
+
+* Spell Checking
+  M-x ispell-word /region/buffer
 * Exporting
-  
+  C-c C-e
