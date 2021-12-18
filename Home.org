@@ -1,3 +1,5 @@
+(Press tab on the sections below they end with ... to show they are expandable)
+
 * Basic Markup
   *bold*
   +strikethrough+
@@ -6,7 +8,8 @@
   =verbatim=
   ~code~
 
-* Section Folding (press TAB on me to expand!)
+
+* Section Folding
   Mary
 ** Sub section
    Had
@@ -48,9 +51,6 @@
   #+END_SRC
 
   #+RESULTS:
-  : #<buffer  *http www.google.com:80*>
-
-
 
 * Org Spreadsheet/Table** Creeation
 ** Creation  
@@ -63,6 +63,7 @@
    There are more commands, notice that you have a "Tbl" button on your file menu while in org mode.
    If you don't have the menu enabled, just press F10.
    
+
 ** Elisp and Calc calculations
    You can do calculations in one of two languages. There is a Calc mode (a bit like Excel) or an Emacs Lisp mode.
    You can reference individual cells, individual columns, ranges, and relative cells and columns. (You have homework, research this)
@@ -85,6 +86,7 @@ Column 3 uses the special Calc syntax. (I don't believe you can mix Elisp and Ca
 |         |         |     |
 #+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
 
+
 ** Making URLS with parameters
 
 
@@ -105,32 +107,31 @@ Move your cursor to the body of the sum colum (anywhere) and press C-c ^ (someti
 |      13 |      14 |  27 |
 #+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
    
+
 ** Cell properties...
 
-
-
-* Images
-https://orgmode.org/manual/Images.html
-
-
-
 * Encryptions usg pgp
-  Use M-x epa-encrypt-region and epa-decrypt-region to deal with encrypting text. (Try decrypting the block below with 'password' as your password)
+  Use M-x epa-encrypt-region and M-x epa-decrypt-region to deal with encrypting text.
+  First highlight the entire region including the header and footer message
+  (Try decrypting the block below with 'password' as your password)
   *NOTE* You will need the commandline version of pgp installed on your system.
+  
+  -----BEGIN PGP MESSAGE-----
+  
+  jA0ECQMCQrvpDnGoxAf/0sBZASWgBMc98zMaq2/HOST5gl9yNhQhacMdV6v+8MWw
+  gAhAEJ+4fBshrk3g4JHHGHXXPVOa4/LrZZizHNWZM0uy0+W2rMQp1UvHJy7ES5B0
+  92fEUBrGQPQ9ZoGjYuK5xL18Dyv52nFTRYEyz/jfdX8q3E1DmbZDiNM6w02oWqQW
+  1FK9ErTHXRHvW5QcwE6ojc07aEJ8Tcya3Fo9g5U4PJElTU2F6AiaLhbu5Jxn0yaS
+  OeHFltUeFtFD6AXcRKxeibUYWlNDUjfMB8oOR2jpsGs06NPC17fQ4y0BQpkLjACu
+  Gc5WoLzj7C6bqnmOEOm+7p/cOiCMBoqOMesTlzyshHjViOrDPaBPKR6ye5fQPiN0
+  /4xJHL3N6Md+qc8=
+  =1/c0
+  -----END PGP MESSAGE-----
 
------BEGIN PGP MESSAGE-----
-
-jA0ECQMCQrvpDnGoxAf/0sBZASWgBMc98zMaq2/HOST5gl9yNhQhacMdV6v+8MWw
-gAhAEJ+4fBshrk3g4JHHGHXXPVOa4/LrZZizHNWZM0uy0+W2rMQp1UvHJy7ES5B0
-92fEUBrGQPQ9ZoGjYuK5xL18Dyv52nFTRYEyz/jfdX8q3E1DmbZDiNM6w02oWqQW
-1FK9ErTHXRHvW5QcwE6ojc07aEJ8Tcya3Fo9g5U4PJElTU2F6AiaLhbu5Jxn0yaS
-OeHFltUeFtFD6AXcRKxeibUYWlNDUjfMB8oOR2jpsGs06NPC17fQ4y0BQpkLjACu
-Gc5WoLzj7C6bqnmOEOm+7p/cOiCMBoqOMesTlzyshHjViOrDPaBPKR6ye5fQPiN0
-/4xJHL3N6Md+qc8=
-=1/c0
------END PGP MESSAGE-----
 
 * Spell Checking
   M-x ispell-word /region/buffer
+
+
 * Exporting
   C-c C-e
