@@ -1,15 +1,7 @@
 (Press tab on the sections below they end with ... to show they are expandable)
 
-* Basic Markup
-  *bold*
-  +strikethrough+
-  _underline_
-  /italics/
-  =verbatim=
-  ~code~
 
-
-* Section Folding
+* Headings start with * marks and can be expanded and collapsed with TAB. (This is a heading)
   Mary
 ** Sub section
    Had
@@ -20,25 +12,82 @@
 ***** Even more!
       Lambda
 ****** More yet!
-       It's 
+       It's
 ******* Gross...
-	Fleece
+        Fleece
 ******** Still yet more!
-	 Was
+         Was
 ********* Again?
-	  White
+          White
 *********** Wat?
-	    AS Snow.
+            AS Snow.
+
+
+
+* Todo Lists
+  Todo lists must be headings and cycle with C-c C-t
+  My Todo List (press C-c C-t to toggle state on each line)
+** TODO Clean Floors
+** TODO Pickup Office
+** TODO Rake Leaves
+** TODO Coffee with /Knights of Lambda Calculus/
+** TODO Illuminati Bakeoff
+
+
+* Checkboxes
+  Checkboxes are quite interesting too, they're a bit like TODO press C-c C-c to toggle them
+  They need a - mark followed by a box
+  - [ ] Toggle this checkbox with C-c C-c
+
+  Interestingly enough, they can also be used to calculate percent done or items done
+  To calculate percent use a [0%] Parent checkbox or a [0/1] parent checkbox
+  Indent child boxes to show ownership
+
+  - [0%]
+    - [ ] don't cycle this one
+    - [ ] do cycle this one
+    - [ ] One more here this should give us 66% above
+
+  Now we'll do a counting hierarchy
+  - [0/4]
+    - [ ] Bread
+    - [ ] Milk
+    - [ ] Cheese
+    - [ ] Lizard eggs
+
+  You can use [/] after a TODO section and [-] boxes on major topics to sum the whole project
+
+** TODO Night Eagle Defence Project [0/2]
+   - [-] Funding
+     - [ ] Ask Scientologists
+     - [X] Ask Lizardmen
+     - [X] Ask DARPA
+   - [-] Planning
+     - [X] Donna in HR (staffing)
+     - [ ] Tom in Finance (swindling)
+     - [X] Hans in European Relations (European Relations)
+
+
+* Basic Markup
+  *bold*
+  +strikethrough+
+  _underline_
+  /italics/
+  =verbatim=
+  ~code~
 
 
 * Linking (Local files and URL)
+  *note* I highly suggest using relative linking paths and keeping everything
+  in a hiarchy of folders so you can zip 'n ship your .org notes folders.
+
   You can do URL links like [[http://www.google.com][this]].
   Link to other org files like [[./Notes/random-note-page.org][this]].
   Link to images like (Toggle visibility with: C-c C-x C-v or org-toggle-inline-images)
   #+CAPTION: Flow of the Lisp REPL
   #+NAME:   fig:REPL-IMAGE
   [[./Images/REPL.png]]
- 
+
   #+CAPTION: The Emacs Logo
   #+NAME:   fig:EMACS-IMAGE
   [[./Images/Emacs.svg]]
@@ -46,78 +95,26 @@
 
 * Interactive Code Snippits
   #+BEGIN_SRC emacs-lisp
-  ;; Some elisp, put cursor on source, execute with C-c C-c
-  (print "Hello World!")
+    ;; Some elisp, put cursor on source, execute with C-c C-c
+    ;; Many languages are supported
+    ;; You can execute any kind of code even if it does stuff on your computer
+    (print "Hello World!")
   #+END_SRC
 
   #+RESULTS:
 
-* Org Spreadsheet/Table** Creeation
-** Creation  
-   For a simple starter table, just enter |- and press tab over it.
-   This will give you a 5 column 1 header, 1 row table.
-   Use TAB to move from cell to tell or SHIFT TAB to move backward
-   Pressing ENTER on a cell inserts a new row
-   Pressing M-Shift and UP deletes the current row
-   Pressing M-Shift and LEFT deletes the current column
-   There are more commands, notice that you have a "Tbl" button on your file menu while in org mode.
-   If you don't have the menu enabled, just press F10.
-   
 
-** Elisp and Calc calculations
-   You can do calculations in one of two languages. There is a Calc mode (a bit like Excel) or an Emacs Lisp mode.
-   You can reference individual cells, individual columns, ranges, and relative cells and columns. (You have homework, research this)
-   The columns start at 1 ($1)
-   Place a :: mark between formulas *NOTE* They ALL need to be on 1 line. I'm sorry it's gross. You can have more than one but you'll have to eval them each manually.
-
-Below, I tell the spreadsheet column 1 is simply 13.
-I then tell the spreadsheet that column 2 is random, I use Elisp here which MUST be quoted for the spreadsheet.
-Column 3 uses the special Calc syntax. (I don't believe you can mix Elisp and Calc syntax in the same calculation)
-
-(Press C-c C-c on the formula line at the bottom to evaluate the formula and polulate the columns)
-| Value A | Value B | Sum |
-|---------+---------+-----|
-|         |         |     |
-|         |         |     |
-|         |         |     |
-|         |         |     |
-|         |         |     |
-|         |         |     |
-|         |         |     |
-#+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
-
-
-** Making URLS with parameters
-
-
-** Sorting
-Hmm let's take the table from our previous section.
-Evalulate it with C-c C-c on the formula line.
-Then let's sort. We are going to sort on sum.
-Move your cursor to the body of the sum colum (anywhere) and press C-c ^ (sometimes it is fussy, if that happens just do M-x org-sort)
-
-| Value A | Value B | Sum |
-|---------+---------+-----|
-|      13 |      56 |  69 |
-|      13 |      78 |  91 |
-|      13 |      47 |  60 |
-|      13 |       8 |  21 |
-|      13 |      48 |  61 |
-|      13 |      26 |  39 |
-|      13 |      14 |  27 |
-#+TBLFM: $1=13::$2='(random 100)::$3=$1+$2
-   
-
-** Cell properties...
+* Org Spreadsheet/Tables
+  This is a very large topic moved to a seperate org page [[./Tables/TableDemo.org][Link]]
 
 * Encryptions usg pgp
   Use M-x epa-encrypt-region and M-x epa-decrypt-region to deal with encrypting text.
   First highlight the entire region including the header and footer message
   (Try decrypting the block below with 'password' as your password)
   *NOTE* You will need the commandline version of pgp installed on your system.
-  
+
   -----BEGIN PGP MESSAGE-----
-  
+
   jA0ECQMCQrvpDnGoxAf/0sBZASWgBMc98zMaq2/HOST5gl9yNhQhacMdV6v+8MWw
   gAhAEJ+4fBshrk3g4JHHGHXXPVOa4/LrZZizHNWZM0uy0+W2rMQp1UvHJy7ES5B0
   92fEUBrGQPQ9ZoGjYuK5xL18Dyv52nFTRYEyz/jfdX8q3E1DmbZDiNM6w02oWqQW
@@ -132,6 +129,6 @@ Move your cursor to the body of the sum colum (anywhere) and press C-c ^ (someti
 * Spell Checking
   M-x ispell-word /region/buffer
 
-
+  
 * Exporting
   C-c C-e
