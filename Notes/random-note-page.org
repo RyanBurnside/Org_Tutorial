@@ -1,0 +1,26 @@
+Here are some notes for my project.
+I did some things to the stuff on [2021-12-18 Sat] 
+
+I also found that the creature had grown another 0.5 inches since last November.
+It seemed to glow less after I fed it some peas and carrots from the supermarket.
+
+Growth chart below
+
+| Month     | Size (decimeters) |                                 |
+|-----------+-------------------+---------------------------------|
+| January   |               0.5 | ░                               |
+| February  |               1.2 | ▓▓▒                             |
+| March     |               2.7 | ▓▓▓▓▓▓▓▒                        |
+| April     |               3.7 | ▓▓▓▓▓▓▓▓▓▓▓░                    |
+| May       |               4.2 | ▓▓▓▓▓▓▓▓▓▓▓▓▒                   |
+| June      |               5.0 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒                |
+| July      |               5.7 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒              |
+| August    |               6.1 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░            |
+| September |               6.3 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░           |
+| October   |                 7 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░         |
+| November  |                 8 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒      |
+| December  |               9.3 | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ |
+#+TBLFM: $3='(orgtbl-ascii-draw $2 0.5 9.3 30 "░▒▓")
+NOTE: The characters above are /extended ASCII/ *NOT* Unicode (which will break the graph)
+NOTE: Emacs can also call gnuplot for charts, BUT this requires you have gnuplot installed on your system.
+

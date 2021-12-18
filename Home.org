@@ -1,0 +1,77 @@
+* Basic Markup
+  *bold*
+  +strikethrough+
+  _underline_
+  /italics/
+  =verbatim=
+  ~code~
+
+* Section Folding (press TAB on me to expand!)
+  Mary
+** Sub section
+   Had
+*** Sub sub section
+    A
+**** Even more with this (This is hard to read and I should adjust the color)
+     Little
+***** Even more!
+      Lambda
+****** More yet!
+       It's 
+******* Gross...
+	Fleece
+******** Still yet more!
+	 Was
+********* Again?
+	  White
+*********** Wat?
+	    AS Snow.
+
+
+* Linking (Local files and URL)
+  You can do URL links like [[http://www.google.com][this]].
+  Link to other org files like [[./Notes/random-note-page.org][this]].
+  Link to images like (Toggle visibility with: C-c C-x C-v or org-toggle-inline-images)
+  #+CAPTION: Flow of the Lisp REPL
+  #+NAME:   fig:REPL-IMAGE
+  [[./Images/REPL.png]]
+ 
+  #+CAPTION: The Emacs Logo
+  #+NAME:   fig:EMACS-IMAGE
+  [[./Images/Emacs.svg]]
+
+
+* Interactive Code Snippits
+  #+BEGIN_SRC emacs-lisp
+  ;; Some elisp, put cursor on source, execute with C-c C-c
+  (print "Hello World!")
+  #+END_SRC
+
+  #+RESULTS:
+  : #<buffer  *http www.google.com:80*>
+
+
+
+* Org Spreadsheet/Table
+** Creeation
+   
+** Making URLS with parameters
+   
+** Elisp and Calc calculations
+
+** Sorting
+   
+** Cell properties...
+
+
+* Images
+https://orgmode.org/manual/Images.html
+
+
+
+* Encryptions usg pgp
+
+*Spell Checking
+
+* Exporting
+  
